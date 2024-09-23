@@ -9,41 +9,58 @@ import Image from "next/image";
 
 export const BackgroundCellAnimation: React.FC = () => {
   return (
-    <div className="relative h-full w-full flex justify-center items-center overflow-hidden">
+    <div className="relative h-full w-full flex justify-center items-center overflow-hidden mt-5">
       <BackgroundCellCore />
       <div className="relative z-40 px-4 md:px-8 lg:px-16 pointer-events-none select-none mt-20">
         <div className="mx-24">
-          <div className="flex gap-8 justify-between">
+          <div className="flex gap-12 items-center justify-between">
+            <div>
+              <Image
+                src="/download.avif"
+                width={300}
+                height={24.11}
+                alt="ycom"
+                className=""
+              />
+            </div>
             <div className="">
-              <h1 className="text-8xl uppercase font-black bg-clip-text text-transparent pointer-events-none">
-                <span className="text-[#ff2a00]">podcast</span> <br />{" "}
-                <span className="text-[#ff5602]">like</span> <br />
-                <span className="text-[#ff8001]">never</span> <br />
+              <h1 className="text-8xl uppercase font-black bg-clip-text text-transparent pointer-events-none ">
+                <span className="text-[#ff2a00]">podcast</span>
+                <div className="flex">
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: 20 }}
+                    whileTap={{
+                      scale: 0.8,
+                      rotate: -20,
+                      borderRadius: "100%",
+                    }}
+                    className="pointer-events-auto -rotate-6"
+                  >
+                    <Image
+                      src="/hero-frame.avif"
+                      width={200}
+                      height={1}
+                      alt="ycom"
+                      className=""
+                    />
+                  </motion.div>
+                  <div>
+                    <span className="text-[#ff5602]">like</span> <br />
+                    <span className="text-[#ff8001]">never</span> <br />
+                  </div>
+                </div>
+
                 <span className="text-[#ffaa01]">before</span>
               </h1>
-              {/* <p className="text-neutral-700 text-sm sm:text-base md:text-lg lg:text-xl my-4 lg:my-6 text-center">
-                Overlap is an AI-powered podcast assistant. Ask it about any
-                topic or person, and it’ll give you a custom podcast playlist of
-                clips relevant to what you asked for. It is a breakthrough way
-                to listen to podcasts.
-              </p> */}
+
               <Link
                 href="https://apps.apple.com/us/app/overlap-explore-conversations/id6449747632"
-                className="z-50 pointer-events-auto"
+                className="z-50 pointer-events-auto "
               >
                 <Button className="px-4 py-2 text-sm sm:text-base">
                   Download the app
                 </Button>
               </Link>
-            </div>
-            <div>
-              <Image
-                src="/download.avif"
-                width={400}
-                height={24.11}
-                alt="ycom"
-                className=""
-              />
             </div>
           </div>
         </div>
@@ -100,7 +117,7 @@ const BackgroundCellCore: React.FC = () => {
             WebkitMaskRepeat: "no-repeat",
           }}
         >
-          <Pattern cellClassName="border-[#4A4A4A] relative z-[100]" />
+          <Pattern cellClassName="border-[#ff2a00] relative z-[100]" />
         </div>
         <Pattern className="opacity-[0.5]" cellClassName="border-[#CCCCCC]" />
       </div>
@@ -146,7 +163,7 @@ const Pattern: React.FC<{ className?: string; cellClassName?: string }> = ({
               <div
                 key={`matrix-col-${colIdx}`}
                 className={cn(
-                  "bg-transparent border-l border-b border-neutral-600",
+                  "bg-transparent border-l border-b border-[#ff2a00]",
                   cellClassName
                 )}
                 onClick={() => setClickedCell([rowIdx, colIdx])}
@@ -156,7 +173,7 @@ const Pattern: React.FC<{ className?: string; cellClassName?: string }> = ({
                   whileHover={{ opacity: [0, 1, 0.5] }}
                   transition={{ duration: 0.5, ease: "backOut" }}
                   animate={controls}
-                  className="bg-[#BEBEBE] h-9 w-9"
+                  className="bg-[#ff8001] h-9 w-9"
                 />
               </div>
             );
