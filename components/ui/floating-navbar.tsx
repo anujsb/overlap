@@ -68,8 +68,8 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({
               src="/logo.png"
               width={30}
               height={30}
-              alt="EACC.dev logo"
-              className=""
+              alt="logo"
+              className="rounded-full"
             />
           </div>
           <div className="hidden sm:flex space-x-4 text-[#404040] hover:text-black mx-20">

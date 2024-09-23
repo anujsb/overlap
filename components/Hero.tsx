@@ -15,7 +15,7 @@ export const BackgroundCellAnimation: React.FC = () => {
         <div className="mx-24">
           <div className="flex gap-8 justify-between">
             <div className="">
-              <h1 className="text-8xl uppercase font-black  bg-clip-text text-transparent pointer-events-none">
+              <h1 className="text-8xl uppercase font-black bg-clip-text text-transparent pointer-events-none">
                 <span className="text-[#ff2a00]">podcast</span> <br />{" "}
                 <span className="text-[#ff5602]">like</span> <br />
                 <span className="text-[#ff8001]">never</span> <br />
