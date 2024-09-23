@@ -5,67 +5,66 @@ import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
-// import Video from "./Video";
+import Video from "./Video";
 
 export const BackgroundCellAnimation: React.FC = () => {
   return (
     <div className="relative h-full w-full flex justify-center items-center overflow-hidden mt-5">
       <BackgroundCellCore />
-      <div className="relative z-40 px-4 md:px-8 lg:px-16 pointer-events-none select-none mt-20">
-        <div className="mx-24">
-          <div className="flex gap-12 items-center justify-between">
+      <div className="relative z-40 px-4 md:px-8 lg:px-16 pointer-events-none select-none mt-10 md:mt-20 lg:mt-32">
+        <div className="mx-4 md:mx-16 lg:mx-24">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-between">
             <div>
               <Image
                 src="/download.avif"
                 width={300}
                 height={24.11}
                 alt="ycom"
-                className=""
+                className="max-w-full h-auto"
               />
             </div>
-            <div className="">
-              <h1 className="text-8xl uppercase font-black bg-clip-text text-transparent pointer-events-none ">
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl md:text-6xl lg:text-8xl uppercase font-black bg-clip-text text-transparent pointer-events-none">
                 <span className="text-[#ff2a00]">podcast</span>
-                <div className="flex">
+                <div className="flex justify-center md:justify-start">
                   <motion.div
-                    whileHover={{ scale: 1.2, rotate: 20 }}
+                    whileHover={{ scale: 1.1, rotate: 20 }}
                     whileTap={{
                       scale: 0.8,
                       rotate: -20,
                       borderRadius: "100%",
                     }}
-                    className="pointer-events-auto -rotate-6"
+                    className="pointer-events-auto "
                   >
                     <Image
                       src="/hero-frame.avif"
-                      width={200}
+                      width={150}
                       height={1}
                       alt="ycom"
-                      className=""
+                      className="max-w-full h-auto -rotate-6"
                     />
                   </motion.div>
-                  <div>
+                  <div className="ml-2">
                     <span className="text-[#ff5602]">like</span> <br />
                     <span className="text-[#ff8001]">never</span> <br />
                   </div>
                 </div>
-
                 <span className="text-[#ffaa01]">before</span>
               </h1>
 
               <Link
                 href="https://apps.apple.com/us/app/overlap-explore-conversations/id6449747632"
-                className="z-50 pointer-events-auto "
+                className="z-50 pointer-events-auto"
               >
-                <Button className="px-4 py-2 text-sm sm:text-base">
+                <Button className="px-4 py-2 mt-4 text-sm sm:text-base">
                   Download the app
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-        <div id="video" className="mt-16 md:mt-32 lg:mt-40 w-full">
-          {/* <Video /> */}
+        <div id="video" className="mt-8 md:mt-16 lg:mt-24 w-full">
+          <Video />
         </div>
       </div>
     </div>
@@ -142,10 +141,8 @@ const Pattern: React.FC<{ className?: string; cellClassName?: string }> = ({
           className="flex flex-col relative z-20 border-b"
         >
           {row.map((_, colIdx) => {
-            // eslint-disable-next-line react-hooks/rules-of-hooks
             const controls = useAnimation();
 
-            // eslint-disable-next-line react-hooks/rules-of-hooks
             useEffect(() => {
               if (clickedCell) {
                 const distance = Math.sqrt(
@@ -173,7 +170,7 @@ const Pattern: React.FC<{ className?: string; cellClassName?: string }> = ({
                   whileHover={{ opacity: [0, 1, 0.5] }}
                   transition={{ duration: 0.5, ease: "backOut" }}
                   animate={controls}
-                  className="bg-[#ff8001] h-9 w-9"
+                  className="bg-[#ff8001] h-6 w-6 md:h-8 md:w-8 lg:h-9 lg:w-9"
                 />
               </div>
             );
