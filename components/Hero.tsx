@@ -11,44 +11,40 @@ export const BackgroundCellAnimation: React.FC = () => {
   return (
     <div className="relative h-full w-full flex justify-center items-center overflow-hidden">
       <BackgroundCellCore />
-      <div className="relative z-40 px-4 md:px-8 lg:px-16 text-center pointer-events-none select-none mt-20">
+      <div className="relative z-40 px-4 md:px-8 lg:px-16 pointer-events-none select-none mt-20">
         <div className="mx-24">
-          <div className="grid grid-flow-col col-span-2">
-            <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-500 mt-16 md:mt-20 lg:mt-28 pointer-events-none">
-                podcast like never before
+          <div className="flex gap-8 justify-between">
+            <div className="">
+              <h1 className="text-8xl uppercase font-black  bg-clip-text text-transparent pointer-events-none">
+                <span className="text-[#ff2a00]">podcast</span> <br />{" "}
+                <span className="text-[#ff5602]">like</span> <br />
+                <span className="text-[#ff8001]">never</span> <br />
+                <span className="text-[#ffaa01]">before</span>
               </h1>
-              <p className="text-neutral-700 text-sm sm:text-base md:text-lg lg:text-xl my-4 lg:my-6">
+              {/* <p className="text-neutral-700 text-sm sm:text-base md:text-lg lg:text-xl my-4 lg:my-6 text-center">
                 Overlap is an AI-powered podcast assistant. Ask it about any
                 topic or person, and it’ll give you a custom podcast playlist of
                 clips relevant to what you asked for. It is a breakthrough way
                 to listen to podcasts.
-              </p>
+              </p> */}
+              <Link
+                href="https://apps.apple.com/us/app/overlap-explore-conversations/id6449747632"
+                className="z-50 pointer-events-auto"
+              >
+                <Button className="px-4 py-2 text-sm sm:text-base">
+                  Download the app
+                </Button>
+              </Link>
             </div>
-          </div>
-          <div className="my-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="https://apps.apple.com/us/app/overlap-explore-conversations/id6449747632"
-              className="z-50 pointer-events-auto"
-            >
-              <Button className="px-4 py-2 text-sm sm:text-base">
-                Download the app
-              </Button>
-            </Link>
-            {/* <p className="text-neutral-600 text-xs sm:text-sm md:text-base">
-            5,000 people like you <br className="hidden sm:block" /> have
-            purchased this product!
-          </p> */}
-            {/* <div className="flex flex-col items-center justify-center md:justify-start mb-4 text-light-grey-bg">
-              backed by
+            <div>
               <Image
-                src="/ycom.png"
-                width={131.39}
+                src="/download.avif"
+                width={400}
                 height={24.11}
                 alt="ycom"
-                className="mx-2 px-2 py-1 border rounded-md bg-white"
+                className=""
               />
-            </div> */}
+            </div>
           </div>
         </div>
         <div id="video" className="mt-16 md:mt-32 lg:mt-40 w-full">
